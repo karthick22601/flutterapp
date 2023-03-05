@@ -1,53 +1,41 @@
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MaterialApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
-}
-
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
-
+import 'package:flutter/material.dart';  
+  
+void main() => runApp(MyApp());  
+  
+class MyApp extends StatefulWidget {  
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
-            );
-          },
-        ),
-      ),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
+class _MyAppState extends State<MyApp> {
+  @override  
+  Widget build(BuildContext context) {  
+    return MaterialApp(  
+      home: Scaffold(  
+        appBar: AppBar(  
+            title: Text('Flutter Image Demo'),  
+        ),  
+        body: SingleChildScrollView(  
+          child: Column(  
+            children: <Widget>[  
+              Image.asset('images/1.jpg'),  
+               Image.asset('images/1.jpg'),  
+                Image.asset('images/1.jpg'),  
+                              Image.asset('images/1.jpg'),  
+              Image.asset('images/1.jpg'),  
+              Image.asset('images/1.jpg'),  
+              
+              Image.asset('images/1.jpg'),  
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('welcome playboy :)'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
+
+             /* Text(  
+                  'A tablet is a wireless touch screen computer that is smaller than a notebook but larger than a smartphone.',  
+                  style: TextStyle(fontSize: 20.0),)  */
+                
+            ],  
+          ),  
+        ),  
+      ),  
+    );  
+  }  
+}  
